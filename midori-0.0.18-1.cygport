@@ -1,0 +1,5 @@
+inherit gnome2
+
+DESCRIPTION="Lightweight GTK+ WebKit web browser"
+HOMEPAGE="http://software.twotoasts.de/?page=midori"
+SRC_URI="http://software.twotoasts.de/media/${PN}/${P}.tar.gz"
