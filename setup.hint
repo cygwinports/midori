@@ -1,4 +1,4 @@
 category: Gnome Web
-requires: cygwin gdk-pixbuf2 glib2 gtk2-x11 gtksourceview2 libcairo2 libintl8 libunique1.0_0 libxml2 pango webkit
+requires: cygwin libcairo libgdk_pixbuf2.0_0 libglib2.0_0 libgtk2.0_0 libintl8 libpango1.0_0 libsoup2.4_1 libsqlite3_0 libunique1.0_0 libwebkit1.0_1 libxml2
 sdesc: "Xfce4 web browser"
 ldesc: "Midori is a lightweight WebKit/GTK+ web browser."

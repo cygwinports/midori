@@ -1,0 +1,21 @@
+inherit gnome2
+
+DESCRIPTION="Lightweight GTK+ WebKit web browser"
+HOMEPAGE="http://software.twotoasts.de/?page=midori"
+SRC_URI="http://goodies.xfce.org/releases/midori/${P}.tar.bz2"
+PATCH_URI="0.1.1-libgthread.patch"
+
+DIFF_EXCLUDES=".lock-wscript .waf-*"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	./waf configure --prefix=/usr --docdir=/usr/share/doc || error "Waf configure failed"
+	./waf build $(echo ${MAKEOPTS} | sed -e 's| |\n|g' | grep '^-j[0-9]') --disable-extensions || error "waf build failed"
+}
+
+src_install() {
+	cd ${B}
+	./waf install --destdir=${D} --disable-extensions || error "waf install failed"
+	mv ${D}/usr/share/doc/${PN} ${D}/usr/share/doc/${P}
+}
