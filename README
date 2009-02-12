@@ -5,16 +5,16 @@ Midori is a lightweight WebKit/GTK+ web browser.
 Runtime requirements:
   cygwin-1.5.25-15
   libcairo2-1.8.6-1
-  libgdk_pixbuf2.0_0-2.14.6-1
-  libglib2.0_0-2.18.3-1
-  libgtk2.0_0-2.14.6-1
+  libgdk_pixbuf2.0_0-2.14.7-2
+  libglib2.0_0-2.18.4-1
+  libgtk2.0_0-2.14.7-2
   libintl8-0.17-2
   libpango1.0_0-1.22.4-1
-  libsoup2.4_1-2.24.2.1-1
-  libsqlite3_0-3.6.3-1
-  libunique1.0_0-1.0.4-1
+  libsoup2.4_1-2.24.3-1
+  libsqlite3_0-3.6.10-1
+  libunique1.0_0-1.0.6-1
   libwebkit1.0_1-1.0.3.39090-1
-  libxml2-2.7.2-1
+  libxml2-2.7.3-1
 
 Build requirements:
 (besides corresponding -devel packages)
@@ -23,7 +23,7 @@ Build requirements:
   gcc-core-3.4.4-3
   intltool-0.40.5-1
   pkg-config-0.23a-2
-  python-2.5.2-4
+  python-2.5.4-1
   rsvg-2.22.3-1
 
 Canonical website:
@@ -35,15 +35,15 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack midori-0.1.0-X-src.tar.bz2
+  unpack midori-0.1.2-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./midori-0.1.0-X.cygport all
+  cygport ./midori-0.1.2-X.cygport all
 
 This will create:
-  /usr/src/midori-0.1.0-X-src.tar.bz2
-  /usr/src/midori-0.1.0-X.tar.bz2
+  /usr/src/midori-0.1.2-X-src.tar.bz2
+  /usr/src/midori-0.1.2-X.tar.bz2
 
 -------------------------------------------
 
@@ -51,16 +51,19 @@ Files included in the binary package:
 
   /etc/postinstall/midori.sh
   /usr/bin/midori.exe
+  /usr/lib/midori/libpage-holder.dll
+  /usr/lib/midori/libstatusbar-features.dll
+  /usr/lib/midori/libtab-panel.dll
   /usr/share/applications/midori.desktop
-  /usr/share/doc/midori-0.1.1/AUTHORS
-  /usr/share/doc/midori-0.1.1/COPYING
-  /usr/share/doc/midori-0.1.1/ChangeLog
-  /usr/share/doc/midori-0.1.1/EXPAT
-  /usr/share/doc/midori-0.1.1/HACKING
-  /usr/share/doc/midori-0.1.1/INSTALL
-  /usr/share/doc/midori-0.1.1/README
-  /usr/share/doc/midori-0.1.1/TODO
-  /usr/share/doc/midori-0.1.1/TRANSLATE
+  /usr/share/doc/midori-0.1.2/AUTHORS
+  /usr/share/doc/midori-0.1.2/COPYING
+  /usr/share/doc/midori-0.1.2/ChangeLog
+  /usr/share/doc/midori-0.1.2/EXPAT
+  /usr/share/doc/midori-0.1.2/HACKING
+  /usr/share/doc/midori-0.1.2/INSTALL
+  /usr/share/doc/midori-0.1.2/README
+  /usr/share/doc/midori-0.1.2/TODO
+  /usr/share/doc/midori-0.1.2/TRANSLATE
   /usr/share/icons/hicolor/16x16/apps/midori.png
   /usr/share/icons/hicolor/16x16/categories/extension.png
   /usr/share/icons/hicolor/16x16/status/news-feed.png
@@ -73,7 +76,9 @@ Files included in the binary package:
   /usr/share/icons/hicolor/48x48/apps/midori.png
   /usr/share/icons/hicolor/48x48/categories/extension.png
   /usr/share/icons/hicolor/48x48/status/news-feed.png
+  /usr/share/locale/da/LC_MESSAGES/midori.mo
   /usr/share/locale/de/LC_MESSAGES/midori.mo
+  /usr/share/locale/el/LC_MESSAGES/midori.mo
   /usr/share/locale/en_GB/LC_MESSAGES/midori.mo
   /usr/share/locale/es/LC_MESSAGES/midori.mo
   /usr/share/locale/et/LC_MESSAGES/midori.mo
@@ -82,8 +87,10 @@ Files included in the binary package:
   /usr/share/locale/gl/LC_MESSAGES/midori.mo
   /usr/share/locale/hu/LC_MESSAGES/midori.mo
   /usr/share/locale/id/LC_MESSAGES/midori.mo
+  /usr/share/locale/ja/LC_MESSAGES/midori.mo
   /usr/share/locale/nl/LC_MESSAGES/midori.mo
   /usr/share/locale/pl/LC_MESSAGES/midori.mo
+  /usr/share/locale/pt_PT/LC_MESSAGES/midori.mo
   /usr/share/locale/ru/LC_MESSAGES/midori.mo
   /usr/share/locale/sv/LC_MESSAGES/midori.mo
   /usr/share/locale/tr/LC_MESSAGES/midori.mo
@@ -93,6 +100,12 @@ Files included in the binary package:
 ------------------
 
 Port Notes:
+
+----- version 0.1.2-1 -----
+Version bump.  Enabled browser extensions.
+
+----- version 0.1.1-1 -----
+Version bump.
 
 ----- version 0.1.0-1 -----
 Initial release for Cygwin.

@@ -1,0 +1,16 @@
+--- origsrc/midori-0.1.2/extensions/wscript_build	2009-01-04 14:28:06.000000000 -0600
++++ src/midori-0.1.2/extensions/wscript_build	2009-02-11 20:21:44.343750000 -0600
+@@ -25,5 +25,5 @@ for extension in extensions:
+     obj.includes = includes
+     obj.source = source
+     obj.uselib = 'UNIQUE LIBSOUP GIO GTK SQLITE WEBKIT LIBXML'
+-    obj.uselib_local = 'katze'
++    obj.uselib_local = 'katze midori'
+     obj.install_path = '${LIBDIR}/midori'
+--- origsrc/midori-0.1.2/midori/wscript_build	2009-01-11 15:31:35.000000000 -0600
++++ src/midori-0.1.2/midori/wscript_build	2009-02-11 20:21:32.937500000 -0600
+@@ -9,3 +9,4 @@ obj.find_sources_in_dirs ('. ../panels')
+ obj.add_marshal_file ('marshal.list', 'midori_cclosure_marshal')
+ obj.uselib = 'UNIQUE LIBSOUP GMODULE GTHREAD GIO GTK SQLITE WEBKIT LIBXML'
+ obj.uselib_local = 'katze'
++obj.ldflags = '-Wl,--export-all-symbols,--out-implib,default/midori/libmidori.a'
