@@ -1,0 +1,36 @@
+Does WAF not provide a way to use system CFLAGS/LDFLAGS ??
+
+--- origsrc/midori-0.1.7/extensions/wscript_build	2009-06-16 14:25:20.604573700 -0500
++++ src/midori-0.1.7/extensions/wscript_build	2009-06-16 14:46:15.182995400 -0500
+@@ -33,3 +33,4 @@ for extension in extensions:
+     obj.source = source
+     obj.uselib = 'UNIQUE LIBSOUP GIO GTK SQLITE WEBKIT LIBXML'
+     obj.install_path = '${LIBDIR}/midori'
++    obj.ldflags = '-Wl,--enable-auto-image-base,--enable-auto-import,default/midori/libmidori.a'
+--- origsrc/midori-0.1.7/midori/wscript_build	2009-06-16 14:25:20.607073800 -0500
++++ src/midori-0.1.7/midori/wscript_build	2009-06-16 14:44:49.697939200 -0500
+@@ -5,8 +5,8 @@
+ import platform
+ 
+ obj = bld.new_task_gen ('cc', 'staticlib')
+-obj.name = 'midori'
+-obj.target = 'midori'
++obj.name = 'midorilib'
++obj.target = 'midorilib'
+ obj.includes = '. ..'
+ obj.find_sources_in_dirs ('.', excludes=['main.c'])
+ obj.add_marshal_file ('marshal.list', 'midori_cclosure_marshal')
+@@ -20,7 +20,7 @@ obj.target = 'panels'
+ obj.includes = '. ..'
+ obj.find_sources_in_dirs ('../panels')
+ obj.uselib = 'UNIQUE LIBSOUP GMODULE GTHREAD GIO GTK SQLITE WEBKIT LIBXML'
+-obj.uselib_local = 'midori'
++obj.uselib_local = 'midorilib'
+ obj.install_path = None
+ 
+ obj = bld.new_task_gen ('cc', 'program')
+@@ -29,3 +29,4 @@ obj.includes = '. .. ../panels'
+ obj.source = 'main.c'
+ obj.uselib = 'UNIQUE LIBSOUP GMODULE GTHREAD GIO GTK SQLITE WEBKIT LIBXML'
+ obj.uselib_local = 'panels'
++obj.ldflags = '-Wl,--enable-auto-import,--export-all-symbols,--out-implib,default/midori/libmidori.a'

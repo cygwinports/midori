@@ -3,7 +3,8 @@ inherit gnome2
 DESCRIPTION="Lightweight GTK+ WebKit web browser"
 HOMEPAGE="http://software.twotoasts.de/?page=midori"
 SRC_URI="http://goodies.xfce.org/releases/midori/${P}.tar.bz2"
-PATCH_URI="0.1.5-extensions.patch"
+PATCH_URI="0.1.7-extensions.patch
+           0.1.7-libnotify.patch"
 
 DIFF_EXCLUDES=".lock-wscript .waf-*"
 
@@ -16,9 +17,9 @@ src_compile() {
 		--disable-hildon \
 		|| error "Waf configure failed"
 
-	# extensions hack breaks parallel make
-	./waf build -j1 || error "waf build failed"
-#	./waf build $(echo ${MAKEOPTS} | sed -e 's| |\n|g' | grep '^-j[0-9]') || error "waf build failed"
+	# the extensions hack messes up parallel make without this
+	./waf build --targets=midori $(echo ${MAKEOPTS} | sed -e 's| |\n|g' | grep '^-j[0-9]') || error "waf build failed"
+	./waf build $(echo ${MAKEOPTS} | sed -e 's| |\n|g' | grep '^-j[0-9]') || error "waf build failed"
 }
 
 src_install() {
