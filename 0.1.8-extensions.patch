@@ -4,7 +4,7 @@
      obj.includes = '..'
      obj.source = source
      obj.uselib = 'UNIQUE LIBSOUP GIO GTK SQLITE WEBKIT LIBXML'
-+    obj.uselib_local = 'midori'
++    obj.ldflags = 'default/midori/libmidori.a'
      obj.install_path = '${LIBDIR}/midori'
 --- origsrc/midori-0.1.8/midori/wscript_build	2009-07-20 16:35:01.000000000 -0500
 +++ src/midori-0.1.8/midori/wscript_build	2009-07-23 13:02:56.998888900 -0500

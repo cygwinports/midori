@@ -3,21 +3,21 @@ midori
 Midori is a lightweight WebKit/GTK+ web browser.
 
 Runtime requirements:
-  cygwin-1.7.0-51
+  cygwin-1.7.0-61
   libcairo2-1.8.8-1
   libgcc1-4.3.2-2
-  libgdk_pixbuf2.0_0-2.16.3-1
-  libglib2.0_0-2.20.4-1
-  libgtk2.0_0-2.16.3-1
-  libidn11-1.9-1
+  libgdk_pixbuf2.0_0-2.16.6-1
+  libglib2.0_0-2.20.5-1
+  libgtk2.0_0-2.16.6-1
+  libidn11-1.5-10
   libintl8-0.17-11
   libnotify1-0.4.5-10
-  libpango1.0_0-1.24.3-1
-  libsoup2.4_1-2.26.3-1
+  libpango1.0_0-1.24.5-1
+  libsoup2.4_1-2.26.3-2
   libsqlite3_0-3.6.11-1
   libunique1.0_0-1.0.8-1
   libwebkit1.0_2-1.1.10-1
-  libxml2-2.7.3-10
+  libxml2-2.7.3-11
 
 Build requirements:
 (besides corresponding -devel packages)

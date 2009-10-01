@@ -2,7 +2,7 @@ inherit gnome2 waf
 
 DESCRIPTION="Lightweight GTK+ WebKit web browser"
 HOMEPAGE="http://software.twotoasts.de/?page=midori"
-SRC_URI="http://goodies.xfce.org/releases/midori/${P}.tar.bz2"
+SRC_URI="http://archive.xfce.org/src/apps/midori/${PV_MAJ_MIN}/${P}.tar.bz2"
 PATCH_URI="0.1.8-extensions.patch
            0.1.7-libnotify.patch"
 
