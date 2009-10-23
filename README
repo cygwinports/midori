@@ -3,27 +3,26 @@ midori
 Midori is a lightweight WebKit/GTK+ web browser.
 
 Runtime requirements:
-  cygwin-1.7.0-61
-  libcairo2-1.8.8-1
-  libgcc1-4.3.2-2
+  cygwin-1.7.0-62
+  libgcc1-4.3.4-1
   libgdk_pixbuf2.0_0-2.16.6-1
   libglib2.0_0-2.20.5-1
   libgtk2.0_0-2.16.6-1
-  libidn11-1.5-10
+  libidn11-1.15-10
   libintl8-0.17-11
-  libnotify1-0.4.5-10
   libpango1.0_0-1.24.5-1
   libsoup2.4_1-2.26.3-2
   libsqlite3_0-3.6.11-1
   libunique1.0_0-1.0.8-1
   libwebkit1.0_2-1.1.10-1
+  libX11_6-1.2.2-2
   libxml2-2.7.3-11
 
 Build requirements:
 (besides corresponding -devel packages)
-  binutils-20080624-2
-  cygport-0.9.8-1
-  gcc4-core-4.3.2-2
+  binutils-2.19.51-1
+  cygport-0.9.10-1
+  gcc4-core-4.3.4-1
   intltool-0.40.6-1
   pkg-config-0.23b-10
   python-2.5.4-10
@@ -31,101 +30,30 @@ Build requirements:
   waf-1.5.8.6447-1
 
 Canonical website:
-  http://www.twotoasts.de/index.php?/pages/midori_summary.html
+  http://software.twotoasts.de/?page=midori
 
 Canonical download:
-  http://goodies.xfce.org/releases/midori/
+  http://archive.xfce.org/src/apps/midori/
 
 -------------------------------------------
 
 Build instructions:
-  unpack midori-0.1.8-X-src.tar.bz2
+  unpack midori-0.2.0-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./midori-0.1.8-X.cygport all
+  cygport ./midori-0.2.0-X.cygport all
 
 This will create:
-  /usr/src/midori-0.1.8-X-src.tar.bz2
-  /usr/src/midori-0.1.8-X.tar.bz2
+  /usr/src/midori-0.2.0-X-src.tar.bz2
+  /usr/src/midori-0.2.0-X.tar.bz2
 
 -------------------------------------------
 
-Files included in the binary package:
-
-  /etc/postinstall/midori.sh
-  /etc/xdg/midori/search
-  /usr/bin/midori.exe
-  /usr/lib/midori/cygcolorful-tabs.dll
-  /usr/lib/midori/cygcookie-manager.dll
-  /usr/lib/midori/cygfeed-panel.dll
-  /usr/lib/midori/cygmouse-gestures.dll
-  /usr/lib/midori/cygpage-holder.dll
-  /usr/lib/midori/cygshortcuts.dll
-  /usr/lib/midori/cygstatusbar-features.dll
-  /usr/lib/midori/cygtab-panel.dll
-  /usr/lib/midori/cygtoolbar-editor.dll
-  /usr/share/applications/midori.desktop
-  /usr/share/doc/midori/AUTHORS
-  /usr/share/doc/midori/COPYING
-  /usr/share/doc/midori/ChangeLog
-  /usr/share/doc/midori/EXPAT
-  /usr/share/doc/midori/HACKING
-  /usr/share/doc/midori/README
-  /usr/share/doc/midori/TODO
-  /usr/share/doc/midori/TRANSLATE
-  /usr/share/icons/hicolor/16x16/apps/midori.png
-  /usr/share/icons/hicolor/16x16/categories/extension.png
-  /usr/share/icons/hicolor/16x16/status/news-feed.png
-  /usr/share/icons/hicolor/22x22/apps/midori.png
-  /usr/share/icons/hicolor/22x22/categories/extension.png
-  /usr/share/icons/hicolor/22x22/status/news-feed.png
-  /usr/share/icons/hicolor/24x24/apps/midori.png
-  /usr/share/icons/hicolor/24x24/categories/extension.png
-  /usr/share/icons/hicolor/24x24/status/news-feed.png
-  /usr/share/icons/hicolor/32x32/apps/midori.png
-  /usr/share/icons/hicolor/32x32/categories/extension.png
-  /usr/share/icons/hicolor/32x32/status/news-feed.png
-  /usr/share/icons/hicolor/48x48/apps/midori.png
-  /usr/share/icons/hicolor/48x48/categories/extension.png
-  /usr/share/icons/hicolor/48x48/status/news-feed.png
-  /usr/share/locale/cs/LC_MESSAGES/midori.mo
-  /usr/share/locale/da/LC_MESSAGES/midori.mo
-  /usr/share/locale/de/LC_MESSAGES/midori.mo
-  /usr/share/locale/el/LC_MESSAGES/midori.mo
-  /usr/share/locale/en_GB/LC_MESSAGES/midori.mo
-  /usr/share/locale/es/LC_MESSAGES/midori.mo
-  /usr/share/locale/et/LC_MESSAGES/midori.mo
-  /usr/share/locale/fi/LC_MESSAGES/midori.mo
-  /usr/share/locale/fr/LC_MESSAGES/midori.mo
-  /usr/share/locale/gl/LC_MESSAGES/midori.mo
-  /usr/share/locale/he/LC_MESSAGES/midori.mo
-  /usr/share/locale/hu/LC_MESSAGES/midori.mo
-  /usr/share/locale/id/LC_MESSAGES/midori.mo
-  /usr/share/locale/it/LC_MESSAGES/midori.mo
-  /usr/share/locale/ja/LC_MESSAGES/midori.mo
-  /usr/share/locale/nl/LC_MESSAGES/midori.mo
-  /usr/share/locale/pl/LC_MESSAGES/midori.mo
-  /usr/share/locale/pt/LC_MESSAGES/midori.mo
-  /usr/share/locale/ro/LC_MESSAGES/midori.mo
-  /usr/share/locale/ru/LC_MESSAGES/midori.mo
-  /usr/share/locale/sk/LC_MESSAGES/midori.mo
-  /usr/share/locale/sr/LC_MESSAGES/midori.mo
-  /usr/share/locale/sr@latin/LC_MESSAGES/midori.mo
-  /usr/share/locale/sv/LC_MESSAGES/midori.mo
-  /usr/share/locale/tr/LC_MESSAGES/midori.mo
-  /usr/share/locale/uk/LC_MESSAGES/midori.mo
-  /usr/share/locale/zh_CN/LC_MESSAGES/midori.mo
-  /usr/share/locale/zh_TW/LC_MESSAGES/midori.mo
-  /usr/share/midori/res/error.html
-  /usr/share/midori/res/logo-shade.png
-  /usr/share/midori/res/mootools.js
-  /usr/share/midori/res/speeddial-head.html
-  /usr/share/midori/res/speeddial.json
-
-------------------
-
 Port Notes:
+
+----- version 0.2.0-1 -----
+Version bump.
 
 ----- version 0.1.8-1 -----
 Version bump.

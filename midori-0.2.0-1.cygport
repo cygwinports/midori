@@ -1,9 +1,17 @@
-inherit gnome2 waf
+inherit xfce4 waf
 
 DESCRIPTION="Lightweight GTK+ WebKit web browser"
 HOMEPAGE="http://software.twotoasts.de/?page=midori"
-SRC_URI="http://archive.xfce.org/src/apps/midori/${PV_MAJ_MIN}/${P}.tar.bz2"
-PATCH_URI="0.1.8-extensions.patch
+
+PATCH_URI="0.2.0-extensions.patch
            0.1.7-libnotify.patch"
 
 WAF_CONFIGURE_FLAGS="--disable-apidocs --disable-userdocs --disable-hildon"
+WAF_BUILD_FLAGS="--targets=midori"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	waf_compile
+	${WAF} build || error "waf build all failed"
+}
