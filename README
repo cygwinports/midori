@@ -3,31 +3,32 @@ midori
 Midori is a lightweight WebKit/GTK+ web browser.
 
 Runtime requirements:
-  cygwin-1.7.0-64
-  libgcc1-4.3.4-1
-  libgdk_pixbuf2.0_0-2.18.3-1
-  libglib2.0_0-2.22.2-1
-  libgtk2.0_0-2.18.3-1
+  cygwin-1.7.5-1
+  libgcc1-4.3.4-3
+  libgdk_pixbuf2.0_0-2.18.6-1
+  libglib2.0_0-2.22.4-2
+  libgtk2.0_0-2.18.6-1
   libintl8-0.17-11
   libnotify1-0.4.5-10
-  libpango1.0_0-1.26.0-1
-  libsoup2.4_1-2.28.1-1
-  libsqlite3_0-3.6.20-1
+  libpango1.0_0-1.26.2-1
+  libsoup2.4_1-2.28.2-1
+  libsqlite3_0-3.6.21-3
   libunique1.0_0-1.0.8-1
-  libwebkit1.0_2-1.1.15.3-1
-  libX11_6-1.3.2-2
-  libxml2-2.7.4-1
+  libwebkit1.0_2-1.1.15.4-1
+  libX11_6-1.3.3-1
+  libxml2-2.7.7-1
+  libXss1-1.2.0-1
 
 Build requirements:
 (besides corresponding -devel packages)
-  binutils-2.19.51-1
-  cygport-0.9.10-1
-  gcc4-core-4.3.4-1
-  intltool-0.40.6-1
+  binutils-2.20.51-2
+  cygport-0.9.84-1
+  gcc4-core-4.3.4-3
+  intltool-0.41.1-1
   pkg-config-0.23b-10
-  python-2.5.4-10
-  rsvg-2.26.0-1
-  waf-1.5.8.6447-1
+  python-2.6.5-1
+  rsvg-2.26.0-2
+  waf-1.5.17-1
 
 Canonical website:
   http://software.twotoasts.de/?page=midori
@@ -38,19 +39,22 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack midori-0.2.1-X-src.tar.bz2
+  unpack midori-0.2.6-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./midori-0.2.1-X.cygport all
+  cygport ./midori-0.2.6-X.cygport all
 
 This will create:
-  /usr/src/midori-0.2.1-X-src.tar.bz2
-  /usr/src/midori-0.2.1-X.tar.bz2
+  /usr/src/midori-0.2.6-X-src.tar.bz2
+  /usr/src/midori-0.2.6-X.tar.bz2
 
 -------------------------------------------
 
 Port Notes:
+
+----- version 0.2.6-1 -----
+Version bump.
 
 ----- version 0.2.1-1 -----
 Version bump.
