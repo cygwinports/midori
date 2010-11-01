@@ -1,4 +1,4 @@
 category: Web Xfce
-requires: libgcc1 libgdk_pixbuf2.0_0 libglib2.0_0 libgtk2.0_0 libintl8 libnotify1 libpango1.0_0 libsoup2.4_1 libsqlite3_0 libunique1.0_0 libwebkit1.0_2 libX11_6 libxml2 libXss1
+requires: libcairo2 libgdk_pixbuf2.0_0 libglib2.0_0 libgtk2.0_0 libintl8 libnotify1 libpango1.0_0 libsoup2.4_1 libsqlite3_0 libunique1.0_0 libwebkit1.0_2 libX11_6 libxml2 libXss1
 sdesc: "Xfce4 web browser"
 ldesc: "Midori is a lightweight WebKit/GTK+ web browser."
