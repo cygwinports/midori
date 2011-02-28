@@ -5,4 +5,4 @@ HOMEPAGE="http://software.twotoasts.de/?page=midori"
 
 PATCH_URI="0.2.9-extensions.patch"
 
-WAF_CONFIGURE_FLAGS="--disable-apidocs --disable-userdocs --disable-hildon"
+WAF_CONFIGURE_FLAGS="--disable-apidocs --disable-hildon"
