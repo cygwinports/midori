@@ -1,0 +1,10 @@
+--- origsrc/midori-0.3.6/midori/main.c	2011-05-15 18:15:28.000000000 -0500
++++ src/midori-0.3.6/midori/main.c	2011-06-20 15:33:24.283448000 -0500
+@@ -1043,6 +1043,7 @@ midori_load_soup_session (gpointer setti
+         "/etc/ssl/certs/ca-certificates.crt",
+         "/etc/ssl/certs/ca-bundle.crt",
+         "/usr/local/share/certs/ca-root-nss.crt",
++        "/usr/ssl/certs/ca-bundle.crt",
+         NULL
+     };
+     guint i;

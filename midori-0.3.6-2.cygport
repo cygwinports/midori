@@ -3,6 +3,7 @@ inherit xfce4 waf
 DESCRIPTION="Lightweight GTK+ WebKit web browser"
 HOMEPAGE="http://software.twotoasts.de/?page=midori"
 
-PATCH_URI="0.2.9-extensions.patch"
+PATCH_URI="0.2.9-extensions.patch
+           0.3.6-ca-certificates.patch"
 
 WAF_CONFIGURE_FLAGS="--disable-apidocs --disable-hildon"
