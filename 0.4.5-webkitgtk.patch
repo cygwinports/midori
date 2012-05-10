@@ -1,0 +1,57 @@
+--- origsrc/midori-0.4.5/extensions/formhistory/formhistory-gdom-frontend.c	2012-04-14 14:17:35.000000000 -0500
++++ src/midori-0.4.5/extensions/formhistory/formhistory-gdom-frontend.c	2012-05-10 02:14:17.806790300 -0500
+@@ -408,6 +408,7 @@ formhistory_DOMContentLoaded_cb (WebKitD
+         g_object_set_data (G_OBJECT (element), "webview", web_view);
+         g_object_set_data (G_OBJECT (element), "framelist", frames);
+         /* Add dblclick? */
++#if WEBKIT_CHECK_VERSION (1, 3, 13)
+         webkit_dom_event_target_add_event_listener (
+                       WEBKIT_DOM_EVENT_TARGET (element), "keyup",
+                       G_CALLBACK (formhistory_editbox_key_pressed_cb), false,
+@@ -416,6 +417,14 @@ formhistory_DOMContentLoaded_cb (WebKitD
+                       WEBKIT_DOM_EVENT_TARGET (element), "blur",
+                       G_CALLBACK (formhistory_suggestions_hide_cb), false,
+                       priv);
++#else
++        g_signal_connect (element, "keyup-event",
++                          G_CALLBACK (formhistory_editbox_key_pressed_cb),
++                          priv);
++        g_signal_connect (element, "blur-event",
++                          G_CALLBACK (formhistory_suggestions_hide_cb),
++                          priv);
++#endif
+     }
+ }
+ 
+@@ -434,10 +443,15 @@ formhistory_setup_suggestions (WebKitWeb
+     g_object_set_data (G_OBJECT (doc), "framelist", frames);
+     g_object_set_data (G_OBJECT (doc), "webview", web_view);
+     /* Connect to DOMContentLoaded of the main frame */
++#if WEBKIT_CHECK_VERSION (1, 3, 13)
+     webkit_dom_event_target_add_event_listener(
+                       WEBKIT_DOM_EVENT_TARGET (doc), "DOMContentLoaded",
+                       G_CALLBACK (formhistory_DOMContentLoaded_cb), false,
+                       priv);
++#else
++    g_signal_connect(doc, "DOMContentLoaded-event",
++                     G_CALLBACK (formhistory_DOMContentLoaded_cb), priv);
++#endif
+ 
+     /* Connect to DOMContentLoaded of frames */
+     for (i = 0; i < webkit_dom_node_list_get_length (frames); i++)
+@@ -451,10 +465,15 @@ formhistory_setup_suggestions (WebKitWeb
+             framewin = webkit_dom_html_frame_element_get_content_window (WEBKIT_DOM_HTML_FRAME_ELEMENT (frame));
+         g_object_set_data (G_OBJECT (framewin), "framelist", frames);
+         g_object_set_data (G_OBJECT (framewin), "webview", (GtkWidget*)web_view);
++#if WEBKIT_CHECK_VERSION (1, 3, 13)
+         webkit_dom_event_target_add_event_listener (
+                       WEBKIT_DOM_EVENT_TARGET (framewin), "DOMContentLoaded",
+                       G_CALLBACK (formhistory_DOMContentLoaded_cb), false,
+                       priv);
++#else
++        g_signal_connect (framewin, "DOMContentLoaded-event",
++                          G_CALLBACK (formhistory_DOMContentLoaded_cb), priv);
++#endif
+     }
+     formhistory_suggestions_hide_cb (NULL, NULL, priv);
+ }
