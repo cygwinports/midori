@@ -1,0 +1,15 @@
+NAME="midori"
+VERSION=0.4.7
+RELEASE=1
+CATEGORY="Web Xfce"
+SUMMARY="Xfce4 web browser"
+DESCRIPTION="Midori is a lightweight WebKit/GTK+ web browser."
+HOMEPAGE="http://twotoasts.de/index.php/midori"
+inherit xfce4 waf
+
+PATCH_URI="0.4.1-extensions.patch
+           0.4.2-ca-certificates.patch"
+
+REQUIRES="ca-certificates"
+
+WAF_CONFIGURE_FLAGS="--disable-apidocs --disable-hildon"
