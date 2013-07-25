@@ -1,0 +1,25 @@
+--- origsrc/midori-0.5.2/extensions/wscript_build	2013-05-17 13:40:41.000000000 -0500
++++ src/midori-0.5.2/extensions/wscript_build	2013-07-25 02:17:04.311484500 -0500
+@@ -52,5 +52,5 @@ for extension in extensions:
+             obj.packages += ' granite'
+     obj.install_path = '${LIBDIR}/midori'
+     # See LINKFLAGS in wscript: w/ o it we get several "undefined reference" errors
+-    if bld.env['platform'] == 'win32':
++    if bld.env['platform'] == 'win32' or Options.platform == 'cygwin':
+         obj.uselib_local = 'midori'
+--- origsrc/midori-0.5.2/wscript	2013-05-17 13:40:41.000000000 -0500
++++ src/midori-0.5.2/wscript	2013-07-25 02:18:09.914236700 -0500
+@@ -328,10 +328,12 @@ def configure (conf):
+     conf.define ('HAVE_OSX', int(sys.platform == 'darwin'))
+     if Options.platform == 'win32':
+         conf.env.append_value ('LINKFLAGS', '-mwindows')
+-        conf.env.append_value ('program_LINKFLAGS', ['-Wl,--out-implib=default/midori/libmidori.a', '-Wl,--export-all-symbols'])
+     else:
+         conf.check (header_name='signal.h')
+ 
++    if Options.platform == 'win32' or Options.platform == 'cygwin':
++        conf.env.append_value ('program_LINKFLAGS', ['-Wl,--out-implib=default/midori/libmidori.a', '-Wl,--export-all-symbols'])
++
+     conf.define ('PACKAGE_NAME', APPNAME)
+     conf.define ('PACKAGE_BUGREPORT', 'https://bugs.launchpad.net/midori')
+     conf.define ('GETTEXT_PACKAGE', APPNAME)

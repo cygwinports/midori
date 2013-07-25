@@ -1,16 +1,25 @@
+WAF_USE_BUNDLED=1
 inherit xfce4 waf
 
 NAME="midori"
-VERSION=0.4.7
-RELEASE=2
+VERSION=0.5.2
+RELEASE=1
 CATEGORY="Web Xfce"
 SUMMARY="Xfce4 web browser"
 DESCRIPTION="Midori is a lightweight WebKit/GTK+ web browser."
 HOMEPAGE="http://twotoasts.de/index.php/midori"
 
-PATCH_URI="0.4.1-extensions.patch
-           0.4.2-ca-certificates.patch"
+PATCH_URI="
+	0.5.2-cygwin-ldflags.patch
+	0.5.2-ca-certificates.patch
+	0.5.2-waf-module-implib.patch
+"
 
 REQUIRES="ca-certificates"
 
-WAF_CONFIGURE_FLAGS="--disable-apidocs --disable-hildon"
+CYGPORT_USE_UNSTABLE_API=1
+src_unpack_hook() {
+	./waf --help >/dev/null
+}
+
+WAF_CONFIGURE_FLAGS="--disable-apidocs"
