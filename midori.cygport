@@ -1,25 +1,15 @@
-WAF_USE_BUNDLED=1
-inherit xfce4 waf
+inherit cmake
 
 NAME="midori"
-VERSION=0.5.2
+VERSION=0.5.7
 RELEASE=1
-CATEGORY="Web Xfce"
-SUMMARY="Xfce4 web browser"
-DESCRIPTION="Midori is a lightweight WebKit/GTK+ web browser."
-HOMEPAGE="http://twotoasts.de/index.php/midori"
-
-PATCH_URI="
-	0.5.2-cygwin-ldflags.patch
-	0.5.2-ca-certificates.patch
-	0.5.2-waf-module-implib.patch
-"
+CATEGORY="Web"
+SUMMARY="Lightweight web browser"
+DESCRIPTION="Midori is a lightweight, fast, and free web browser based on
+WebKit/GTK+. It aligns well with the Xfce philosophy of making the most out
+of available resources."
+HOMEPAGE="http://midori-browser.org/"
+SRC_URI="http://midori-browser.org/downloads/midori_${VERSION}_all_.tar.bz2"
+PATCH_URI="0.5.7-cmake-cygwin.patch"
 
 REQUIRES="ca-certificates"
-
-CYGPORT_USE_UNSTABLE_API=1
-src_unpack_hook() {
-	./waf --help >/dev/null
-}
-
-WAF_CONFIGURE_FLAGS="--disable-apidocs"

@@ -1,0 +1,21 @@
+--- origsrc/midori-0.5.7/CMakeLists.txt	2014-01-15 14:43:34.000000000 -0600
++++ src/midori-0.5.7/CMakeLists.txt	2014-03-06 11:58:21.642232500 -0600
+@@ -103,7 +103,7 @@ if (${BEGIN} GREATER 0)
+ else()
+     set(BSD 0)
+ endif()
+-if (UNIX AND NOT BSD)
++if (UNIX AND NOT BSD AND NOT CYGWIN)
+     set(VALAFLAGS ${VALAFLAGS} -D HAVE_EXECINFO_H)
+ endif ()
+ 
+--- origsrc/midori-0.5.7/midori/CMakeLists.txt	2014-01-15 14:43:34.000000000 -0600
++++ src/midori-0.5.7/midori/CMakeLists.txt	2014-03-06 11:52:31.262191900 -0600
+@@ -67,6 +67,7 @@ if (WIN32)
+ else ()
+     install(TARGETS ${LIBMIDORI}
+             LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
++            RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+             )
+ endif ()
+ 
