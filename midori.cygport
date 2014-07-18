@@ -1,7 +1,7 @@
 inherit cmake
 
 NAME="midori"
-VERSION=0.5.7
+VERSION=0.5.8
 RELEASE=1
 CATEGORY="Web"
 SUMMARY="Lightweight web browser"
@@ -10,6 +10,7 @@ WebKit/GTK+. It aligns well with the Xfce philosophy of making the most out
 of available resources."
 HOMEPAGE="http://midori-browser.org/"
 SRC_URI="http://midori-browser.org/downloads/midori_${VERSION}_all_.tar.bz2"
+SRC_DIR=.
 PATCH_URI="0.5.7-cmake-cygwin.patch"
 
 REQUIRES="ca-certificates"
